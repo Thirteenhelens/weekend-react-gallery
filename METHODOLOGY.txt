@@ -1,0 +1,30 @@
+{} Methodology 
+    [X] Gallery list && Get
+    [] Put && update with the like button
+
+
+{X} Basic && Setup
+  [X] Install all dependencies 
+  [X] Make components
+
+
+{} Components 
+    [] List of all photos (GalleryList)
+        [] Create component
+        [] Get on component
+        [] Import on app 
+        [] Export on component
+        [] Server Get
+    [] Like button && like counter (GalleryItem)
+        [] Create component
+        [] Put on component
+        [] Import on app
+        [] Export on component
+        [] Conditional rendering a description (swap it with image)
+
+
+{} GPPD
+    [] Get
+    [] Put
+    [] Post
+    [] Delete
