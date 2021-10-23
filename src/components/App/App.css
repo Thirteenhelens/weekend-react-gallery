@@ -13,3 +13,16 @@
   font-size: 1.5em;
 }
 
+.albumContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageDiv {
+  padding: 20px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
