@@ -1,6 +1,9 @@
+//Importing GalleryItem so I can use it later on
 import GalleryItem from "../GalleryItem/GalleryItem";
 
+
 function GalleryList({ galleryList, getGalleryList }) {
+//Returning the HT ML text that will be put on the DOM
   return (
     <div className="albumContainer">
       {galleryList.map((picture) => (
@@ -14,4 +17,5 @@ function GalleryList({ galleryList, getGalleryList }) {
   );
 }
 
+//Exporting the function so other files can use it
 export default GalleryList;
