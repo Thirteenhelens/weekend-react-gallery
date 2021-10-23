@@ -25,19 +25,26 @@ router.get('/', (req, res) => {
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
-    const queryText = `
+    const galleryId = req.params.id;
+    const galleryLikes = req.params;
 
+    console.log(req.params);
+
+    let values = [galleryId]
+
+    const queryText = `
+    UPDATE "gallery"
+    SET "likes" = "likes" + 1
+    WHERE "id" = $1;
     ;`
 
-pool.query(queryText)
-.then((result) => {
-    res.sendStatus(201);
-})
-.catch((err) => {
-    console.log('Error in put ->', err);
-})
-
-
+    pool.query(queryText, values)
+        .then((result) => {
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log('Error in put ->', err);
+        })
 }); // END PUT Route
 
 module.exports = router;

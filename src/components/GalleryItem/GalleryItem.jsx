@@ -9,12 +9,13 @@ function GalleryItem({ picture, getGalleryList }) {
     setFlipPicture(!flipPicture);
   };
 
-  const loveImage = () => {
+  const loveImage = (event) => {
     console.log(`I love ->`, picture.id);
     let picToLove = picture.id;
+    
     axios({
       method: "PUT",
-      url: `/gallery/like/${picToLove}`,
+      url: `/gallery/like/${picToLove}`
     })
       .then((response) => {
         console.log("PUT love response ->", response);
@@ -37,7 +38,7 @@ function GalleryItem({ picture, getGalleryList }) {
         )}
 
         <div>
-          <button onClick={loveImage}>Lovely!</button>
+          <button value={picture.likes} onClick={loveImage}>Lovely!</button>
 
           {picture.likes ? (
             <p>{picture.likes} Love</p>
