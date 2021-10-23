@@ -27,20 +27,25 @@ function GalleryItem({ picture, getGalleryList }) {
 
   return (
     <>
-      <div className="imageDiv" onClick={clicked}>
+      <div className="imageDiv">
         {flipPicture ? (
-          <p className="image">{picture.description}</p>
+          <p onClick={clicked} className="image">
+            {picture.description}
+          </p>
         ) : (
-          <img className="image" src={picture.path}></img>
+          <img onClick={clicked} className="image" src={picture.path}></img>
         )}
-      
 
-      <div>
-        <button onClick={loveImage}>Lovely!</button>
+        <div>
+          <button onClick={loveImage}>Lovely!</button>
 
-        {picture.likes ? <p>{picture.likes} Love</p> : <p>No love for this</p>}
+          {picture.likes ? (
+            <p>{picture.likes} Love</p>
+          ) : (
+            <p>No love for this</p>
+          )}
+        </div>
       </div>
-    </div>
     </>
   );
 }
