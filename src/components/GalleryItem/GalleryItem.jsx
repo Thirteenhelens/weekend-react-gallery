@@ -8,6 +8,12 @@ import { useState } from "react";
 
 function GalleryItem({ picture, getGalleryList }) {
   const [loveCount, setLoveCount] = useState(0);
+  const [flipPicture, setFlipPicture] = useState(false);
+
+  const clicked = () => {
+    console.log(`Clicked`);
+    setFlipPicture(!flipPicture);
+  };
 
   const loveImage = () => {
     console.log(`I love ->`, picture.id);
@@ -15,21 +21,19 @@ function GalleryItem({ picture, getGalleryList }) {
   };
 
   return (
-    <div>
-        
-      <img src={picture.path}></img>
+    <>
+      <div onClick={clicked}>
+        {flipPicture ? (
+          <p>{picture.description}</p>
+        ) : (
+          <img src={picture.path}></img>
+        )}
+      </div>
 
-      <p>{picture.description}</p>
-      
       <button onClick={loveImage}>Lovely!</button>
-      
-      {loveCount === 0 ? (
-        <p>No love for this</p>
-      ) : (
-        <p>{loveCount} Love</p>
-      )}
 
-    </div>
+      {loveCount ? <p>{loveCount} Love</p> : <p>No love for this</p>}
+    </>
   );
 }
 
