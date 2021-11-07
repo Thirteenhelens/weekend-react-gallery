@@ -4,7 +4,8 @@
 
 _Duration: Weekend Sprint_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
+This App is used to share photos from throughout my life that have significance to me. 
+Each image also has a description behind it to give the image come context, and tell the reader a little about me. 
 
 ### Prerequisites
 
