@@ -3,7 +3,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 
 
 function GalleryList({ galleryList, getGalleryList }) {
-//Returning the HT ML text that will be put on the DOM
+//Returning the HTML text that will be put on the DOM
   return (
     <div className="albumContainer">
       {galleryList.map((picture) => (

@@ -44,7 +44,12 @@ function GalleryItem({ picture, getGalleryList }) {
             {picture.description}
           </p>
         ) : (
-          <img onClick={clicked} className="image" src={picture.path}></img>
+          <img
+            alt={picture.description}
+            src={picture.path}
+            onClick={clicked}
+            className="image"
+          ></img>
         )}
 
         <div>
@@ -63,7 +68,7 @@ function GalleryItem({ picture, getGalleryList }) {
       </div>
     </>
   );
-}
+};
 
 //Exporting the function for other files to use.
 export default GalleryItem;
